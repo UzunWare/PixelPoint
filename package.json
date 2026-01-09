@@ -1,0 +1,24 @@
+{
+  "name": "pixelpoint",
+  "version": "0.0.1",
+  "private": true,
+  "description": "PixelPoint - Visual feedback tool for websites",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:dashboard\" \"npm run dev:widget\"",
+    "dev:dashboard": "npm run dev --workspace=apps/dashboard",
+    "dev:widget": "npm run dev --workspace=apps/widget",
+    "build": "npm run build:widget && npm run copy:widget && npm run build:dashboard",
+    "build:dashboard": "npm run build --workspace=apps/dashboard",
+    "build:widget": "npm run build --workspace=apps/widget",
+    "copy:widget": "cp apps/widget/dist/pixelpoint.js apps/dashboard/public/pixelpoint.js",
+    "build:production": "VITE_API_URL=$VITE_API_URL npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "puppeteer": "^24.34.0"
+  }
+}

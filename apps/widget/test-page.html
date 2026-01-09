@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelPoint Widget Test Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      min-height: 200vh; /* Make page scrollable */
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.5rem;
+    }
+
+    .header p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+
+    .card p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* Flex Layout */
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .flex-item {
+      flex: 1;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Nested Structure */
+    .nested-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .nested-level-1 {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .nested-level-2 {
+      background: #e0e0e0;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .nested-level-3 {
+      background: #d0d0d0;
+      padding: 8px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    /* Transformed Elements */
+    .transform-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .rotated {
+      transform: rotate(5deg);
+      background: #fef3c7;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .scaled {
+      transform: scale(1.05);
+      background: #dbeafe;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    /* Links and Buttons */
+    .actions {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .actions a {
+      color: #3b82f6;
+      margin-right: 15px;
+    }
+
+    .actions button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .actions button:hover {
+      background: #2563eb;
+    }
+
+    /* Element with ID */
+    #unique-element {
+      background: #dcfce7;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* List */
+    .list-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .list-container ul {
+      margin: 10px 0 0 0;
+      padding-left: 20px;
+    }
+
+    .list-container li {
+      padding: 5px 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1f2937;
+      color: white;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with ID -->
+  <header class="header" id="hero">
+    <h1>PixelPoint Test Page</h1>
+    <p>Test the element selection and highlighting functionality</p>
+  </header>
+
+  <!-- Grid Layout -->
+  <section class="grid-container">
+    <div class="card">
+      <h3>Card One</h3>
+      <p>This is the first card in a CSS Grid layout.</p>
+    </div>
+    <div class="card">
+      <h3>Card Two</h3>
+      <p>This is the second card in a CSS Grid layout.</p>
+    </div>
+    <div class="card">
+      <h3>Card Three</h3>
+      <p>This is the third card in a CSS Grid layout.</p>
+    </div>
+  </section>
+
+  <!-- Flex Layout -->
+  <section class="flex-container">
+    <div class="flex-item">
+      <h3>Flex Item A</h3>
+      <p>Testing flexbox layout selection.</p>
+    </div>
+    <div class="flex-item">
+      <h3>Flex Item B</h3>
+      <p>Testing flexbox layout selection.</p>
+    </div>
+  </section>
+
+  <!-- Deeply Nested Structure -->
+  <section class="nested-container">
+    <h3>Nested Elements Test</h3>
+    <p>Test selection on deeply nested elements:</p>
+    <div class="nested-level-1">
+      Level 1
+      <div class="nested-level-2">
+        Level 2
+        <div class="nested-level-3">
+          Level 3 - <span>Inline span</span> - <strong>Bold text</strong>
+        </div>
+        <div class="nested-level-3">
+          Another Level 3
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformed Elements -->
+  <section class="transform-container">
+    <h3>Transformed Elements</h3>
+    <p>Test selection on CSS transformed elements:</p>
+    <div class="rotated">
+      This element is rotated 5 degrees
+    </div>
+    <div class="scaled">
+      This element is scaled to 105%
+    </div>
+  </section>
+
+  <!-- Links and Buttons -->
+  <section class="actions">
+    <h3>Interactive Elements</h3>
+    <p>Test that clicking these doesn't navigate away in comment mode:</p>
+    <p>
+      <a href="https://google.com">Link to Google</a>
+      <a href="https://github.com">Link to GitHub</a>
+    </p>
+    <p>
+      <button onclick="alert('Button 1 clicked!')">Button 1</button>
+      <button onclick="alert('Button 2 clicked!')">Button 2</button>
+    </p>
+  </section>
+
+  <!-- Element with unique ID -->
+  <section id="unique-element">
+    <h3>Element with ID</h3>
+    <p>This element has id="unique-element". The selector should be short: #unique-element</p>
+  </section>
+
+  <!-- List -->
+  <section class="list-container">
+    <h3>List Items</h3>
+    <p>Test nth-child selector generation:</p>
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      <li>Fourth item</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>PixelPoint Widget Test Page</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <!-- Load the PixelPoint widget -->
+  <script
+    type="module"
+    src="http://localhost:3002/src/main.tsx"
+    data-project-id="871bfdd5-5c3a-4a4f-a21e-f03d4cffc36d"
+  ></script>
+</body>
+</html>
